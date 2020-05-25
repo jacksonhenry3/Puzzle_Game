@@ -1,0 +1,23 @@
+/*@import 'button';*/
+html {
+  position: relative;
+  left: 0px;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Roboto Slab", serif;
+  background: #fafafa;
+}
+
+.grid_square {
+  background: #feb144;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  border-radius: 25px;
+  transform: rotateY(0deg);
+  transition: all 0.3s linear, background 0s linear 0.15s;
+  box-shadow: 3px 3px 0px 0px;
+  cursor: pointer;
+}

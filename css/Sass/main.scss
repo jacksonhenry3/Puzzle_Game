@@ -1,0 +1,41 @@
+$red: rgb(66,192,150);
+$color-neutral:rgb(250,250,250);
+$transition-time:.3s;
+$radius : 25px;
+$depth-offset : 5px;
+
+
+/*@import 'button';*/
+
+html
+{
+    position: relative;
+    left: 0px;
+    overflow-x: hidden;
+    // transition:left $transition-time;
+    // transition-timing-function:$timing-function
+}
+
+body
+{
+    font-family: 'Roboto Slab', serif;
+    background: $color-neutral;
+}
+
+.grid_square
+{
+
+  background: rgb(254, 177, 68);
+  
+  width:100px;
+  height:100px;
+  margin:10px;
+
+  border-radius:$radius;
+
+  transform: rotateY(0deg);
+  transition: all $transition-time linear, background 0s linear $transition-time /2;
+  box-shadow: 3px 3px 0px 0px;
+  cursor: pointer;
+
+}
