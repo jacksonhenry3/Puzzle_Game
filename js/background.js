@@ -1,74 +1,51 @@
-// var x = document.getElementsByClassName("grid_square");
-// x[0].onclick = test;
+function move(i,j,dir) {
 
-colors = ["rgb(255, 102, 99)","rgb(254, 177, 68)","rgb(253, 253, 151)","rgb(158, 224, 158)","rgb(148, 183, 227)","rgb(204, 153, 201)"]
-
-// angle = 0
-// function test() {
-// 	currentColor = window.getComputedStyle( x[0] ,null).getPropertyValue('background-color');  
-// 	currentIndex = colors.indexOf(currentColor);
-
-// 	idx = (currentIndex+1)%6
-// 	newColor = colors[idx]
-// 	x[0].style.background = newColor;
-// 	angle+=180
-// 	x[0].style.transform = "rotateY("+angle+"deg)";
-
-// }
-
-
-function square(i,j,color) {
-	var self = this
-	self.i = i;
-	self.j = j;
-	self.color = color;
-	self.angle = 0
-	self.flip_counter = 0
- 
-
-	self.generate = function()
-	{
-		self.element =  document.createElement("div");
-		self.element.classList.add("grid_square");
-		document.getElementById("page").appendChild(self.element);
-		for (var i = 0; i < 6; i++) {
-			self.flip()
-		}
-		
-	}
-
-	self.flip = function()
-	{
-		self.flip_counter+=1
-		currentIndex = colors.indexOf(self.color);
-		newColor = colors[(currentIndex+1)%6]
-		self.color = newColor
-		self.angle+=180
-		console.log(self)
-		self.element.style.background = newColor;
-		self.element.style.color = darken(newColor);
-		self.element.style.transform = "rotateY("+self.angle+"deg)";
-		self.element.style.boxShadow = ((-1)**self.flip_counter*3)+"px 3px 0px 0px";
-	}
-
-	self.generate()
-
-	self.element.onclick = self.flip
-	}
-
-function darken(c)
-{
+	if (i==6||i==-1) {return};
+	if (j==6||j==-1) {return};
 	
-	lst = c.substring(4,c.length-1).split(',')
-	r = lst[0]*.8
-	g = lst[1]*.8
-	b = lst[2]*.8
-	return("rgb("+r+","+g+","+b+")")
+	Gameboard[i][j].flip(dir)
+
+	if (dir == 'right') {setTimeout(function(){move(i-1,j,"right")},100)}
+	else if (dir == 'left') {setTimeout(function(){move(i+1,j,"left")},100)}
+	else if (dir == 'up') {setTimeout(function(){move(i,j+1,"up")},100)}
+	else if (dir == 'down') {setTimeout(function(){move(i,j-1,"down")},100)}
+	else
+	{
+		setTimeout(function(){move(i-1,j,"right")},100)
+		setTimeout(function(){move(i+1,j,"left")},100)
+		setTimeout(function(){move(i,j+1,"up")},100)
+		setTimeout(function(){move(i,j-1,"down")},100)
+	};
 }
 
-a = new square(0,0,"rgb(255, 102, 99)")
-a = new square(0,0,"rgb(255, 102, 99)")
-a = new square(0,0,"rgb(255, 102, 99)")
-a = new square(0,0,"rgb(255, 102, 99)")
-a = new square(0,0,"rgb(255, 102, 99)")
-a = new square(0,0,"rgb(255, 102, 99)")
+
+
+
+
+Gameboard = new Array(6)
+
+for (var i = 0; i < Gameboard.length; i++) { 
+    Gameboard[i] = new Array(6); 
+} 
+
+
+for (var III = Gameboard.length - 1; III >= 0; III--) {
+	for (var JJJ = Gameboard.length - 1; JJJ >= 0; JJJ--) {
+		Gameboard[III][JJJ] = new square(III,JJJ,colors[5-III])
+		// Gameboard[III][JJJ] = new square(III,JJJ,colors[5])
+	}
+}
+
+
+setTimeout(function(){
+for (var i = 4 - 1; i >= 0; i--) {
+	I = Math.floor(Math.random()*6)
+	J = Math.floor(Math.random()*6)
+	// Cascade(I,J)
+	// Cascade(I,J)
+	// Cascade(I,J)
+	// Cascade(I,J)
+	// Cascade(I,J)
+};
+ backgroundTrack.play();
+ },1000)
