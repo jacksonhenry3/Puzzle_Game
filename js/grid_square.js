@@ -98,7 +98,7 @@ function square(i,j,color)
 		self.element.style.transform = "perspective(200px) rotateX("+self.Vangle+"deg) rotateY("+self.Hangle+"deg) rotateZ("+self.Zangle+"deg)";
 		self.element.style.boxShadow = ((-1)**self.Hflip_counter*.5)+"vmin "+((-1)**self.Vflip_counter*.5)+"vmin 0px 0px";
 
-		// click()
+		click()
 	}
 
 	self.generate()

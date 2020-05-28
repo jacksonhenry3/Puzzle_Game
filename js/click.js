@@ -1,31 +1,11 @@
-var audio_list = [];
+var audio_list = ['click1.wav','click2.wav','click3.wav','click4.wav'];
 
-for (var i = 15 - 1; i >= 0; i--) {
-	var a = new Audio('click1.wav')
-	a.volume = 0.1
-	audio_list.push(a)
-}
+click_element = new Audio()
 
-for (var i = 15 - 1; i >= 0; i--) {
-	var a = new Audio('click2.wav')
-	a.volume = 0.1
-	audio_list.push(a)
-}
-
-for (var i = 15 - 1; i >= 0; i--) {
-	var a = new Audio('click3.wav')
-	a.volume = 0.1
-	audio_list.push(a)
-}
-
-for (var i = 15 - 1; i >= 0; i--) {
-	var a = new Audio('click4.wav')
-	a.volume = 0.1
-	audio_list.push(a)
-}
 
 function click() {
 	chosen_click = random_choice(audio_list);
-	chosen_click.volume = Math.random()/10+.25/50
-	setTimeout(function(){chosen_click.play()},Math.random()*25);
+	click_element.setAttribute('src',chosen_click);
+	click_element.load();
+	setTimeout(function(){click_element.play()},Math.random()*0);
 }
