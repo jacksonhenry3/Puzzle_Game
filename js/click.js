@@ -7,7 +7,7 @@ function click() {
 	
 	var chosen_click = random_choice(audio_list);
 	var click_element = new Audio(chosen_click)
-	click_element.volume = Math.random()/10+.15
+	click_element.volume = Math.random()/30+.02
 	click_element.playbackRate = Math.random()/5+1
 	setTimeout(function(){click_element.play()},Math.random()*0);
 }
