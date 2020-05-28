@@ -26,6 +26,6 @@ for (var i = 15 - 1; i >= 0; i--) {
 
 function click() {
 	chosen_click = random_choice(audio_list);
-	chosen_click.volume = Math.random()/50+.15/50
+	chosen_click.volume = Math.random()/10+.25/50
 	setTimeout(function(){chosen_click.play()},Math.random()*25);
 }

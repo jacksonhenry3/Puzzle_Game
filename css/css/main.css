@@ -12,26 +12,16 @@ body {
 
 .grid_square {
   background: #feb144;
-  width: 125px;
-  height: 125px;
-  margin: 10px;
-  border-radius: 1.5rem;
+  margin: 1%;
+  border-radius: 2vmin;
   transform: rotateY(0deg);
   transition: all 0.3s linear, background 0s linear 0.15s;
-  box-shadow: 5px 5px 0px 0px;
-  border: 1.5px solid;
+  box-shadow: 0.5vmin 0.5vmin 0px 0px;
+  border: 0.25vmin solid;
   cursor: pointer;
-  position: absolute;
-}
-
-#page {
-  position: relative;
-  /*background:black;*/
-  margin: 0px auto;
-  /*margin-top:100px;*/
-  width: 900px;
-  height: 100px;
-  /*background: black;*/
+  margin-left: 1vmin;
+  margin-bottom: 1vmin;
+  /*position: absolute;*/
 }
 
 h1 {
@@ -41,4 +31,20 @@ h1 {
   text-shadow: 5px 5px #7692b6;
   /*border:1.5px solid;*/
   margin-bottom: 25px;
+  font-weight: 700;
+}
+
+/*VISUALIZATIONS NOT PREMANENT*/
+.col-xs-2 {
+  /*background: rgba(255,0,0,.5);*/
+  margin: 0px;
+  padding: 0;
+}
+
+.row {
+  width: 80vmin;
+  max-width: 1080px;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  /*background: teal;*/
 }

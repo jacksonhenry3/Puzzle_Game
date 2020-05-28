@@ -1,10 +1,10 @@
 // var w = window.innerWidth;
 // var h = window.innerHeight;
 
-var w = document.getElementById('page').clientWidth;
+// var w = document.getElementById('page').clientWidth;
 // var h = window.innerHeight;
 // var l = Math.min(w,h);
-var l = w;
+var l = 600;
 var tilewidth = l/6
 var squarewidth = l/7
 
@@ -30,8 +30,10 @@ function square(i,j,color)
 		// give it the class grid_square
 		self.element.classList.add("grid_square");
 
+
+
 		// add the element to the page
-		document.getElementById("page").appendChild(self.element);
+		document.getElementById("col"+i).appendChild(self.element);
 
 		// set the background color
 		self.element.style.background = self.color
@@ -40,8 +42,8 @@ function square(i,j,color)
 		self.element.style.color = darken(self.color);
 
 		// positioning, THIS SHOULD BE CHANGED
-		self.element.style.top = self.j*tilewidth+"px"
-		self.element.style.left = (5-self.i)*tilewidth+"px"
+		// self.element.style.top = self.j*tilewidth+"px"
+		// self.element.style.left = (5-self.i)*tilewidth+"px"
 
 		// initializes the elemnt with zero rotation so rotations on click are smooth
 		self.element.style.transform = "perspective(100px) rotateX("+self.Vangle+"deg) rotateY("+self.Hangle+"deg)";	
@@ -69,32 +71,32 @@ function square(i,j,color)
 		if (dir == "right")
 			{
 				self.Hflip_counter+=1;
-				if (self.Vflip_counter%2==0) {self.Hangle+=inverse*180;}
-				else {self.Hangle-=inverse*180;}
+				if (self.Vflip_counter%2==0) {self.Hangle+=inverse*-180;}
+				else {self.Hangle-=inverse*-180;}
 			}
 		else if (dir == "left")
 			{
 				self.Hflip_counter+=1;
-				if (self.Vflip_counter%2==0) {self.Hangle-=inverse*180;}
-				else {self.Hangle+=inverse*180;}
+				if (self.Vflip_counter%2==0) {self.Hangle-=inverse*-180;}
+				else {self.Hangle+=inverse*-180;}
 			}
 		else if (dir == "up") 
 			{
 				self.Vflip_counter+=1;
-				self.Vangle-=inverse*180;
+				self.Vangle-=inverse*-180;
 			}
 		else if (dir ==  "down") 
 			{
 				self.Vflip_counter+=1;
-				self.Vangle+=inverse*180;
+				self.Vangle+=inverse*-180;
 			}
 		else
 		{
 				self.Zangle+=360
 		}
 
-		self.element.style.transform = "perspective(100px) rotateX("+self.Vangle+"deg) rotateY("+self.Hangle+"deg) rotateZ("+self.Zangle+"deg)";
-		self.element.style.boxShadow = ((-1)**self.Hflip_counter*5)+"px "+((-1)**self.Vflip_counter*5)+"px 0px 0px";
+		self.element.style.transform = "perspective(200px) rotateX("+self.Vangle+"deg) rotateY("+self.Hangle+"deg) rotateZ("+self.Zangle+"deg)";
+		self.element.style.boxShadow = ((-1)**self.Hflip_counter*.5)+"vmin "+((-1)**self.Vflip_counter*.5)+"vmin 0px 0px";
 
 		click()
 	}
