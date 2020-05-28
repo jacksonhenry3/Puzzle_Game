@@ -1,11 +1,13 @@
 var audio_list = ['click1.wav','click2.wav','click3.wav','click4.wav'];
 
-click_element = new Audio()
+
 
 
 function click() {
-	chosen_click = random_choice(audio_list);
-	click_element.setAttribute('src',chosen_click);
-	click_element.load();
+	
+	var chosen_click = random_choice(audio_list);
+	var click_element = new Audio(chosen_click)
+	click_element.volume = Math.random()/10+.15
+	click_element.playbackRate = Math.random()/5+1
 	setTimeout(function(){click_element.play()},Math.random()*0);
 }
