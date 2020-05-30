@@ -13,14 +13,15 @@ console.log(l)
 function square(i,j,color)
 {
 	var self = this
-	self.i = i;
-	self.j = j;
-	self.color = color;
+	self.i = i
+	self.j = j
+	self.color = color
 	self.Hangle = 0
 	self.Vangle = 0
 	self.Zangle = 0
 	self.Hflip_counter = 0
-	self.Vflip_counter = 0
+	self.Vflip_counter = 0;
+	self.text_element;
  
 	self.generate = function()
 	{
@@ -41,12 +42,11 @@ function square(i,j,color)
 		// this sets the shadow color becouse box shadow inherits its color from color
 		self.element.style.color = darken(self.color);
 
-		// positioning, THIS SHOULD BE CHANGED
-		// self.element.style.top = self.j*tilewidth+"px"
-		// self.element.style.left = (5-self.i)*tilewidth+"px"
-
 		// initializes the elemnt with zero rotation so rotations on click are smooth
 		self.element.style.transform = "perspective(100px) rotateX("+self.Vangle+"deg) rotateY("+self.Hangle+"deg)";	
+	
+		self.text_element = document.createElement("div");
+		self.element.appendChild(self.text_element);
 	}
 
 	self.flip = function(dir,inverse = false)
@@ -95,6 +95,8 @@ function square(i,j,color)
 				self.Zangle+=360
 		}
 
+		self.text_element.textContent = (new_color_index)+1
+		self.text_element.style.transform = "perspective(200px) rotateX("+self.Vangle+"deg) rotateY("+self.Hangle+"deg) rotateZ("+self.Zangle+"deg)";
 		self.element.style.transform = "perspective(200px) rotateX("+self.Vangle+"deg) rotateY("+self.Hangle+"deg) rotateZ("+self.Zangle+"deg)";
 		self.element.style.boxShadow = ((-1)**self.Hflip_counter*.5)+"vmin "+((-1)**self.Vflip_counter*.5)+"vmin 0px 0px";
 

@@ -22,6 +22,12 @@ body {
   margin-left: 1vmin;
   margin-bottom: 1vmin;
   /*position: absolute;*/
+  font-size: 100px;
+  text-align: center;
+}
+.grid_square div {
+  transition: all 0.3s linear;
+  transition: content 0s linear 0.15s;
 }
 
 h1 {

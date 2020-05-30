@@ -41,6 +41,13 @@ body
   margin-left:1vmin;
   margin-bottom:1vmin;
   /*position: absolute;*/
+  font-size:100px;
+  text-align: center;
+  div
+  {
+    transition: all $transition-time linear;
+    transition: content 0s linear $transition-time/2;
+  }
 
 }
 
