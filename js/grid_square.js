@@ -95,7 +95,7 @@ function square(i,j,color)
 				self.Zangle+=360
 		}
 
-		self.text_element.textContent = (new_color_index)+1
+		self.text_element.textContent = 5-(new_color_index)+1
 		self.text_element.style.transform = "perspective(200px) rotateX("+self.Vangle+"deg) rotateY("+self.Hangle+"deg) rotateZ("+self.Zangle+"deg)";
 		self.element.style.transform = "perspective(200px) rotateX("+self.Vangle+"deg) rotateY("+self.Hangle+"deg) rotateZ("+self.Zangle+"deg)";
 		self.element.style.boxShadow = ((-1)**self.Hflip_counter*.5)+"vmin "+((-1)**self.Vflip_counter*.5)+"vmin 0px 0px";

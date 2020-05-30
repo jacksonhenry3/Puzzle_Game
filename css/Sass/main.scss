@@ -20,6 +20,7 @@ body
 {
     font-family: 'Roboto Slab', serif;
     background: $color-neutral;
+    user-select: none;
 }
 
 .grid_square

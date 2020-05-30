@@ -8,6 +8,9 @@ html {
 body {
   font-family: "Roboto Slab", serif;
   background: whitesmoke;
+  -webkit-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .grid_square {
