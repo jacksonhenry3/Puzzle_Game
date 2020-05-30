@@ -4,6 +4,9 @@
 // var w = document.getElementById('page').clientWidth;
 // var h = window.innerHeight;
 // var l = Math.min(w,h);
+var iOS = navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+
+
 var l = 600;
 var tilewidth = l/6
 var squarewidth = l/7
@@ -96,11 +99,15 @@ function square(i,j,color)
 		}
 
 		self.text_element.textContent = 5-(new_color_index)+1
-		self.text_element.style.transform = "perspective(200px) rotateX("+self.Vangle+"deg) rotateY("+self.Hangle+"deg) rotateZ("+self.Zangle+"deg)";
-		self.element.style.transform = "perspective(200px) rotateX("+self.Vangle+"deg) rotateY("+self.Hangle+"deg) rotateZ("+self.Zangle+"deg)";
-		self.element.style.boxShadow = ((-1)**self.Hflip_counter*.5)+"vmin "+((-1)**self.Vflip_counter*.5)+"vmin 0px 0px";
+		self.text_element.style.transform = "perspective(300px) rotateX("+self.Vangle+"deg) rotateY("+self.Hangle+"deg) rotateZ("+self.Zangle+"deg)";
+		self.element.style.transform = "perspective(300px) rotateX("+self.Vangle+"deg) rotateY("+self.Hangle+"deg) rotateZ("+self.Zangle+"deg)";
+		self.element.style.boxShadow = ((-1)**self.Hflip_counter*.3)+"vmin "+((-1)**self.Vflip_counter*.3)+"vmin 0px 0px";
 
-		click()
+		if (!iOS)
+		{
+			click()
+		}
+		
 	}
 
 	self.generate()

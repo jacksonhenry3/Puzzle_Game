@@ -7,7 +7,7 @@ setTimeout(function(){
 }
 }
 
-for (var i = 5 - 1; i >= 0; i--) {
+for (var i = 6 - 1; i >= 0; i--) {
 	I = Math.floor(Math.random()*6)
 	J = Math.floor(Math.random()*6)
 	move(I,J,"",true)

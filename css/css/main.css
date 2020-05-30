@@ -7,6 +7,7 @@ html {
 
 body {
   font-family: "Roboto Slab", serif;
+  font-family: "M PLUS Rounded 1c", sans-serif;
   background: whitesmoke;
   -webkit-user-select: none;
       -ms-user-select: none;
@@ -19,29 +20,31 @@ body {
   border-radius: 2vmin;
   transform: rotateY(0deg);
   transition: all 0.3s linear, background 0s linear 0.15s;
-  box-shadow: 0.5vmin 0.5vmin 0px 0px;
+  box-shadow: 0.3vmin 0.3vmin 0px 0px;
   border: 0.25vmin solid;
   cursor: pointer;
-  margin-left: 1vmin;
+  margin: 1vmin;
   margin-bottom: 1vmin;
+  margin-top: 1vmin;
   /*position: absolute;*/
   text-align: center;
   /*vertical-align: center;*/
 }
 .grid_square div {
-  font-size: 10vmin;
+  font-size: 8vmin;
   transition: all 0.3s linear;
   transition: content 0s linear 0.15s;
+  text-shadow: 0px 0px red inset;
 }
 
 h1 {
+  font-family: "M PLUS Rounded 1c", sans-serif;
   text-align: center;
-  font-size: 5em;
+  font-size: 15vmin;
   color: #94b7e3;
-  text-shadow: 5px 5px #7692b6;
+  text-shadow: 3px 3px #7692b6;
   /*border:1.5px solid;*/
   margin-bottom: 25px;
-  font-weight: 700;
 }
 
 /*VISUALIZATIONS NOT PREMANENT*/
@@ -57,4 +60,14 @@ h1 {
   margin: 0 auto;
   margin-bottom: 100px;
   /*background: teal;*/
+}
+
+#game {
+  display: none;
+  display: block;
+  border: 5px solid #7692b6;
+  padding: 2vmin;
+  border-radius: 2vmin;
+  background-color: rgba(148, 183, 227, 0.2);
+  box-shadow: 0px 0px 10px 0px rgba(44, 55, 68, 0.3);
 }

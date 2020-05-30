@@ -19,6 +19,7 @@ html
 body
 {
     font-family: 'Roboto Slab', serif;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
     background: $color-neutral;
     user-select: none;
 }
@@ -36,20 +37,22 @@ body
 
   transform: rotateY(0deg);
   transition: all $transition-time linear, background 0s linear $transition-time/2;
-  box-shadow: .5vmin .5vmin 0px 0px;
+  box-shadow: .3vmin .3vmin 0px 0px;
   border:.25vmin solid;
   cursor: pointer;
-  margin-left:1vmin;
+  margin:1vmin;
   margin-bottom:1vmin;
+   margin-top:1vmin;
   /*position: absolute;*/
   
   text-align: center;
   /*vertical-align: center;*/
   div
   {
-    font-size:10vmin;
+    font-size:8vmin;
     transition: all $transition-time linear;
     transition: content 0s linear $transition-time/2;
+    text-shadow: 0px 0px  red inset;
 
   }
 
@@ -61,13 +64,13 @@ body
 
 h1
 {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   text-align: center;
-  font-size: 5em;
+  font-size: 15vmin;
   color:rgb(148, 183, 227);
-  text-shadow: 5px 5px rgb(148*.8, 183*.8, 227*.8);
+  text-shadow: 3px 3px rgb(148*.8, 183*.8, 227*.8);
   /*border:1.5px solid;*/
   margin-bottom:25px;
-  font-weight: 700;
 }
 
 
@@ -89,4 +92,17 @@ h1
   margin:0 auto;
   margin-bottom:100px;
   /*background: teal;*/
+}
+
+
+#game
+{
+  display: none;
+  display:block;
+  border:5px solid rgb(148*.8, 183*.8, 227*.8);
+  padding:2vmin;
+  border-radius: $radius;
+  background-color: rgba(148, 183, 227,.2);
+
+  box-shadow: 0px 0px 10px 0px rgba(148*.3, 183*.3, 227*.3,.3);
 }
