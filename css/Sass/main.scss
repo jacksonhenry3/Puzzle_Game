@@ -3,6 +3,8 @@ $color-neutral:rgb(245,245,245);
 $transition-time:.3s;
 $radius : 2vmin;
 $depth-offset : 5px;
+$red : rgb(255, 102, 99);
+$blue : rgb(148, 183, 227);
 
 
 /*@import 'button';*/
@@ -19,7 +21,6 @@ html
 body
 {
     font-family: 'Roboto Slab', serif;
-    font-family: 'M PLUS Rounded 1c', sans-serif;
     background: $color-neutral;
     user-select: none;
 }
@@ -95,14 +96,14 @@ h1
 }
 
 
-#game
+.content
 {
   display: none;
   display:block;
-  border:5px solid rgb(148*.8, 183*.8, 227*.8);
+  border:5px solid $blue;
   padding:2vmin;
   border-radius: $radius;
-  background-color: rgba(148, 183, 227,.2);
+  background-color: rgba($blue,.15);
 
-  box-shadow: 0px 0px 10px 0px rgba(148*.3, 183*.3, 227*.3,.3);
+  box-shadow: 0px 0px 10px 0px rgba(darken($blue,35),.3);
 }
