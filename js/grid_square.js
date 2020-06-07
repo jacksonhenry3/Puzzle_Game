@@ -103,10 +103,10 @@ function square(i,j,color)
 		self.element.style.transform = "perspective(300px) rotateX("+self.Vangle+"deg) rotateY("+self.Hangle+"deg) rotateZ("+self.Zangle+"deg)";
 		self.element.style.boxShadow = ((-1)**self.Hflip_counter*.3)+"vmin "+((-1)**self.Vflip_counter*.3)+"vmin 0px 0px";
 
-		if (!iOS)
-		{
-			click()
-		}
+		// if (!iOS)
+		// {
+		click()
+		// }
 		
 	}
 
