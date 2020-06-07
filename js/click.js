@@ -29,7 +29,10 @@ function load_sound(url,i) {
 }
 
 
-
+onError = function()
+{
+	alert("err")
+}
 function play_sound(buffer) {
   var source = context.createBufferSource(); // creates a sound source
   source.buffer = buffer;                    // tell the source which sound to play
