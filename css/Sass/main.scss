@@ -20,13 +20,17 @@ html
 
 body
 {
-    font-family: 'Roboto Slab', serif;
+
+    
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight:200;
     background: $color-neutral;
     user-select: none;
 }
 
 .grid_square
 {
+  font-family: 'Roboto Slab', serif;
 
   background: rgb(254, 177, 68);
   
@@ -76,11 +80,8 @@ h1
 
 
 
-/*VISUALIZATIONS NOT PREMANENT*/
-
 .col-xs-2
 {
-  /*background: rgba(255,0,0,.5);*/
   margin:0px;
   padding:0;
 }
@@ -88,22 +89,114 @@ h1
 .row
 {
 
-  width:80vmin;
+  
   max-width:1080px;
   margin:0 auto;
-  margin-bottom:100px;
+  margin-bottom:5vmin;
+  text-align: center;
+  /*margin-bottom:100px;*/
   /*background: teal;*/
 }
 
 
 .content
 {
-  display: none;
-  display:block;
-  border:5px solid $blue;
-  padding:2vmin;
+  width:95vmin;
+  border:.5vmin solid $blue;
+  /*padding:2vmin;*/
   border-radius: $radius;
-  background-color: rgba($blue,.15);
+  /*background-color: rgba($blue,.25);*/
+  color:$blue;
+  /*box-shadow: .6vmin .6vmin 0px 0px;*/
+}
 
-  box-shadow: 0px 0px 10px 0px rgba(darken($blue,35),.3);
+
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background:$blue;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 23px;
+  height: 23px;
+  background: darken($blue,25);
+  cursor: pointer;
+  color:$blue;
+  box-shadow: 2px 2px 0px 0px darken($blue,35);
+  border-radius:5px;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding:1vmin 2vmin;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2em;
+  
+  cursor: pointer;
+
+   background: $blue;
+  
+  
+
+
+  border-radius:$radius;
+
+  transform: rotateY(0deg);
+  transition: all .05s linear;
+  box-shadow: .3vmin .3vmin 0px 0px darken($blue,5);
+  border:.25vmin solid darken($blue,5);
+  cursor: pointer;
+  margin: 0px auto;
+  margin-bottom:1vmin;
+  margin-top:1vmin;
+
+  
+  text-align: center;
+  position: relative;
+  top:0;
+  left:0;
+  font-size: 2em;
+
+}
+
+.button:hover
+{
+  top:.1vmin;
+  left:.1vmin;
+  box-shadow: .2vmin .2vmin 0px 0px darken($blue,5);
+}
+
+.button:active
+{
+  top:.3vmin;
+  left:.3vmin;
+  box-shadow: 0vmin 0vmin 0px 0px darken($blue,5);
+}
+
+.grid_square:active
+{
+  box-shadow: 0vmin 0vmin 0px 0px;
 }

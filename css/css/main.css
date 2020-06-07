@@ -6,7 +6,8 @@ html {
 }
 
 body {
-  font-family: "Roboto Slab", serif;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 200;
   background: whitesmoke;
   -webkit-user-select: none;
       -ms-user-select: none;
@@ -14,6 +15,7 @@ body {
 }
 
 .grid_square {
+  font-family: "Roboto Slab", serif;
   background: #feb144;
   margin: 1%;
   border-radius: 2vmin;
@@ -46,27 +48,101 @@ h1 {
   margin-bottom: 25px;
 }
 
-/*VISUALIZATIONS NOT PREMANENT*/
 .col-xs-2 {
-  /*background: rgba(255,0,0,.5);*/
   margin: 0px;
   padding: 0;
 }
 
 .row {
-  width: 80vmin;
   max-width: 1080px;
   margin: 0 auto;
-  margin-bottom: 100px;
+  margin-bottom: 5vmin;
+  text-align: center;
+  /*margin-bottom:100px;*/
   /*background: teal;*/
 }
 
 .content {
-  display: none;
-  display: block;
-  border: 5px solid #94b7e3;
-  padding: 2vmin;
+  width: 95vmin;
+  border: 0.5vmin solid #94b7e3;
+  /*padding:2vmin;*/
   border-radius: 2vmin;
-  background-color: rgba(148, 183, 227, 0.15);
-  box-shadow: 0px 0px 10px 0px rgba(41, 92, 156, 0.3);
+  /*background-color: rgba($blue,.25);*/
+  color: #94b7e3;
+  /*box-shadow: .6vmin .6vmin 0px 0px;*/
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #94b7e3;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 23px;
+  height: 23px;
+  background: #3374c4;
+  cursor: pointer;
+  color: #94b7e3;
+  box-shadow: 2px 2px 0px 0px #295c9c;
+  border-radius: 5px;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 1vmin 2vmin;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2em;
+  cursor: pointer;
+  background: #94b7e3;
+  border-radius: 2vmin;
+  transform: rotateY(0deg);
+  transition: all 0.05s linear;
+  box-shadow: 0.3vmin 0.3vmin 0px 0px #80a9de;
+  border: 0.25vmin solid #80a9de;
+  cursor: pointer;
+  margin: 0px auto;
+  margin-bottom: 1vmin;
+  margin-top: 1vmin;
+  text-align: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  font-size: 2em;
+}
+
+.button:hover {
+  top: 0.1vmin;
+  left: 0.1vmin;
+  box-shadow: 0.2vmin 0.2vmin 0px 0px #80a9de;
+}
+
+.button:active {
+  top: 0.3vmin;
+  left: 0.3vmin;
+  box-shadow: 0vmin 0vmin 0px 0px #80a9de;
+}
+
+.grid_square:active {
+  box-shadow: 0vmin 0vmin 0px 0px;
 }

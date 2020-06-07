@@ -1,11 +1,12 @@
 
-setTimeout(function(){
-	for (var i = 6 - 1; i >= 0; i--) {
-	for (var j = 6 - 1; j >= 0; j --) {
-	move(i,j,"",true)
-	// move(i,j,"",false)
-}
-}
+document.getElementById('Start').onclick = function(){
+// 	for (var i = 6 - 1; i >= 0; i--) {
+// 	for (var j = 6 - 1; j >= 0; j --) {
+// 	move(i,j,"",true)
+// 	// move(i,j,"",false)
+// }
+// }
+
 
 for (var i = 6 - 1; i >= 0; i--) {
 	I = Math.floor(Math.random()*6)
@@ -20,4 +21,6 @@ backgroundTrack.loop = true;
 backgroundTrack.currentTime = Math.random()*100;
 
  backgroundTrack.play();
- },0)
+ 
+
+};
