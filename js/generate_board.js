@@ -31,3 +31,4 @@ function reportWindowSize() {
 }
 
 window.onresize = reportWindowSize;
+

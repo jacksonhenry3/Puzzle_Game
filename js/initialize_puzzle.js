@@ -1,5 +1,6 @@
 
 document.getElementById('Start').onclick = function(){
+	init_sound()
 // 	for (var i = 6 - 1; i >= 0; i--) {
 // 	for (var j = 6 - 1; j >= 0; j --) {
 // 	move(i,j,"",true)
@@ -20,7 +21,7 @@ backgroundTrack.volume = .1;
 backgroundTrack.loop = true;
 backgroundTrack.currentTime = Math.random()*100;
 
- backgroundTrack.play();
+ // backgroundTrack.play();
  
 
 };
