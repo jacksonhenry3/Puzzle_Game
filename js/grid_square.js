@@ -11,7 +11,6 @@ var l = 600;
 var tilewidth = l/6
 var squarewidth = l/7
 
-console.log(l)
 
 function square(i,j,color)
 {
@@ -105,7 +104,7 @@ function square(i,j,color)
 
 		// if (!iOS)
 		// {
-		click()
+		// click()
 		// }
 		
 	}

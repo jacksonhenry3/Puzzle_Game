@@ -1,0 +1,26 @@
+body {
+  display: grid;
+  grid-template-columns: 50px 50px 50px 50px;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    ". title title tile ."
+    " . tutorial start settings ."
+    " game game game game game"
+    " game game game game game"
+    " game game game game game"
+    " game game game game game"
+    " game game game game game";
+}
+
+.item-a {
+  grid-area: title;
+}
+.item-b {
+  grid-area: game;
+}
+.item-c {
+  grid-area: start;
+}
+.item-d {
+  grid-area: tutorial;
+}

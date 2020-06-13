@@ -1,4 +1,8 @@
-var board = new Array(6)
+var board;
+gen_board()
+function gen_board()
+{
+	board = new Array(6)
 
 for (var i = 0; i < board.length; i++) { 
     board[i] = new Array(6); 
@@ -15,6 +19,9 @@ for (var III = board.length - 1; III >= 0; III--) {
 		// board[III][JJJ].element.style.left = 100*JJJ
 	}
 }
+
+}
+
 
 function reportWindowSize() {
   for (var III = board.length - 1; III >= 0; III--) {
