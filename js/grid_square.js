@@ -104,7 +104,7 @@ function square(i,j,color)
 
 		// if (!iOS)
 		// {
-		// click()
+		click()
 		// }
 		
 	}

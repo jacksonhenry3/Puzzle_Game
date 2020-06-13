@@ -1,6 +1,6 @@
 var settings_button = document.getElementById('Settings')
 var settings = document.getElementById('settings')
-var settings_shown = true
+var settings_shown = false
 function togglee_settings() {
 	if (settings_shown) {settings.style.transform = "scaleY(0) translate(-50%, -50%)";}
 	if (!settings_shown) {settings.style.transform = "scaleY(1) translate(-50%, -50%)";}
@@ -10,9 +10,11 @@ function togglee_settings() {
 
 }
 
+settings_button.onclick = function(){togglee_settings()}
+
 window.onclick = function(){
 
-	// init_sound()
+	init_sound()
 backgroundTrack = new Audio("Ambient.mp3");
 backgroundTrack.volume = .1;
 backgroundTrack.loop = true;
@@ -20,7 +22,7 @@ backgroundTrack.currentTime = Math.random()*100;
 
 
 
-settings_button.onclick = function(){togglee_settings()}
+
 
 
 
