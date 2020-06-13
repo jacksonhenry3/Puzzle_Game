@@ -1,6 +1,15 @@
 var settings_button = document.getElementById('Settings')
 var settings = document.getElementById('settings')
-var settings_shown = false
+var settings_shown = true
+function togglee_settings() {
+	if (settings_shown) {settings.style.transform = "scaleY(0) translate(-50%, -50%)";}
+	if (!settings_shown) {settings.style.transform = "scaleY(1) translate(-50%, -50%)";}
+	settings_shown = ! settings_shown
+		
+		// self.element.style.boxShadow = ((-1)**self.Hflip_counter*.3)+"vmin "+((-1)**self.Vflip_counter*.3)+"vmin 0px 0px";
+
+}
+
 window.onclick = function(){
 
 	// init_sound()
@@ -13,14 +22,7 @@ backgroundTrack.currentTime = Math.random()*100;
 
 settings_button.onclick = function(){togglee_settings()}
 
-function togglee_settings() {
-	if (settings_shown) {settings.style.transform = "scaleY(0)";}
-	if (!settings_shown) {settings.style.transform = "scaleY(1)";}
-	settings_shown = ! settings_shown
-		
-		// self.element.style.boxShadow = ((-1)**self.Hflip_counter*.3)+"vmin "+((-1)**self.Vflip_counter*.3)+"vmin 0px 0px";
 
-}
 
  // backgroundTrack.play();
  window.onclick = function()
@@ -57,8 +59,8 @@ window.addEventListener('click', function(e){
   }
    else{
 
-    if (settings_shown) {settings.style.transform = "scaleY(0)";}
+    if (settings_shown) {settings.style.transform = "scaleY(0) translate(-50%, -50%)";settings_shown = ! settings_shown;}
 	// if (!settings_shown) {settings.style.transform = "scaleY(1)";}
-	settings_shown = ! settings_shown
+	
   }
 });
