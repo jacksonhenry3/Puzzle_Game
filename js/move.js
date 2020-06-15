@@ -42,14 +42,15 @@ function check_win()
 		request.onload = function() {
 		context.decodeAudioData(request.response, function(buffer) {
 		buf = buffer;
+				var src = context.createBufferSource(); // creates a sound source
+		src.buffer = buf;                    // tell the source which sound to play
+		src.connect(context.destination);       // connect the source to the context's destination (the speakers)
+		src.start(0);                           // play the source now
+                                             // note: on older systems, may have to use deprecated noteOn(time);
+		// alert(source)
 		}, onError);
 		}
 		request.send();
-		var source = context.createBufferSource(); // creates a sound source
-		source.buffer = buf;                    // tell the source which sound to play
-		source.connect(context.destination);       // connect the source to the context's destination (the speakers)
-		source.start(0);                           // play the source now
-                                             // note: on older systems, may have to use deprecated noteOn(time);
-		// alert(source)
+
 	}
 }
