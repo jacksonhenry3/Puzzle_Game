@@ -50,6 +50,6 @@ function check_win()
 		source.connect(context.destination);       // connect the source to the context's destination (the speakers)
 		source.start(0);                           // play the source now
                                              // note: on older systems, may have to use deprecated noteOn(time);
-		alert(source)
+		// alert(source)
 	}
 }
