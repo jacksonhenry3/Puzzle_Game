@@ -22,7 +22,7 @@ function square(i,j,color)
 	self.Vangle = 0
 	self.Zangle = 0
 	self.Hflip_counter = 0
-	self.Vflip_counter = 0;
+	self.Vflip_counter = 0
 	self.text_element;
  
 	self.generate = function()
@@ -97,18 +97,25 @@ function square(i,j,color)
 				self.Zangle+=360
 		}
 
-		// self.text_element.textContent = 5-(new_color_index)+1
+		self.redraw()
+		click()
+		if (check_win()) {
+			window.setTimeout(function(){alert("you won!")},400)
+		}
+		
+	}
+
+	self.redraw = function()
+	{
+		color_index = colors.indexOf(self.color);
+		if ( document.getElementById("shownums").checked) {self.text_element.textContent = 5-(color_index)+1}
+		else {self.text_element.textContent = ""}
 		self.text_element.style.transform = "perspective(300px) rotateX("+self.Vangle+"deg) rotateY("+self.Hangle+"deg) rotateZ("+self.Zangle+"deg)";
 		self.element.style.transform = "perspective(300px) rotateX("+self.Vangle+"deg) rotateY("+self.Hangle+"deg) rotateZ("+self.Zangle+"deg)";
 		self.element.style.boxShadow = ((-1)**self.Hflip_counter*.3)+"vmin "+((-1)**self.Vflip_counter*.3)+"vmin 0px 0px";
-
-		// if (!iOS)
-		// {
-		click()
-		// }
-		
 	}
 
 	self.generate()
 	self.element.onclick = function(){move(self.i,self.j,"")}
 }
+

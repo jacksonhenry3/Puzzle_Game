@@ -16,4 +16,40 @@ function move(i,j,dir,inv = false) {
 		setTimeout(function(){move(i,j+1,"up",inv)},100*Math.random()+115)
 		setTimeout(function(){move(i,j-1,"down",inv)},100*Math.random()+115)
 	};
+
+
+}
+
+function check_win()
+{
+	var allred = true;
+	for (var i = board.length - 1; i >= 0; i--) 
+	{
+		for (var j = board[i].length - 1; j >= 0; j--) 
+		{
+			allred = allred && (colors.indexOf(board[i][j].color)==0);
+		}
+	}
+
+	if (allred) 
+	{
+		var buf;
+		var request = new XMLHttpRequest();
+		request.open('GET', "./win.mp3", true);
+		request.responseType = 'arraybuffer';
+
+		// Decode asynchronously
+		request.onload = function() {
+		context.decodeAudioData(request.response, function(buffer) {
+		buf = buffer;
+		}, onError);
+		}
+		request.send();
+		var source = context.createBufferSource(); // creates a sound source
+		source.buffer = buf;                    // tell the source which sound to play
+		source.connect(context.destination);       // connect the source to the context's destination (the speakers)
+		source.start(0);                           // play the source now
+                                             // note: on older systems, may have to use deprecated noteOn(time);
+		alert(source)
+	}
 }

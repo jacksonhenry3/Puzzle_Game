@@ -39,3 +39,11 @@ function reportWindowSize() {
 
 window.onresize = reportWindowSize;
 
+function redraw_all()
+{
+	for (var i = board.length - 1; i >= 0; i--) {
+		for (var j = board[i].length - 1; j >= 0; j--) {
+		board[i][j].redraw()
+	}
+	}
+}

@@ -38,7 +38,8 @@ backgroundTrack.currentTime = Math.random()*100;
 
 function generate_puzzle()
 {
-	for (var i = 6 - 1; i >= 0; i--) {
+	n = document.getElementById("dificulty").value
+	for (var i = n - 1; i >= 0; i--) {
 	I = Math.floor(Math.random()*6)
 	J = Math.floor(Math.random()*6)
 	move(I,J,"",true)
