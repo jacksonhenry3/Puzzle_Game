@@ -51,6 +51,8 @@ function check_win()
 		}, onError);
 		}
 		request.send();
-
+		level = level+1
 	}
+
+
 }

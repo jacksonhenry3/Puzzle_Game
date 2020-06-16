@@ -1,6 +1,7 @@
 var settings_button = document.getElementById('Settings')
 var settings = document.getElementById('settings')
 var settings_shown = false
+var level = 1.;
 function togglee_settings() {
 	if (settings_shown) {settings.style.transform = "scaleY(0) translate(-50%, -50%)";}
 	if (!settings_shown) {settings.style.transform = "scaleY(1) translate(-50%, -50%)";}
@@ -38,7 +39,10 @@ backgroundTrack.currentTime = Math.random()*100;
 
 function generate_puzzle()
 {
-	n = document.getElementById("dificulty").value
+	n = parseInt(document.getElementById("dificulty").value)
+	console.log(n)
+	n = n+level
+	console.log(level)
 	for (var i = n - 1; i >= 0; i--) {
 	I = Math.floor(Math.random()*6)
 	J = Math.floor(Math.random()*6)
