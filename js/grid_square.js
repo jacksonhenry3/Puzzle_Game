@@ -99,9 +99,6 @@ function square(i,j,color)
 
 		self.redraw()
 		click()
-		if (check_win()) {
-			window.setTimeout(function(){alert("you won!")},400)
-		}
 		
 	}
 
@@ -117,5 +114,6 @@ function square(i,j,color)
 
 	self.generate()
 	self.element.onclick = function(){move(self.i,self.j,"")}
+	self.element.oncontextmenu = function(){move(self.i,self.j,"",inv = true);return false;}
 }
 

@@ -39,18 +39,38 @@ backgroundTrack.currentTime = Math.random()*100;
 
 function generate_puzzle()
 {
+	for (var i = board.length - 1; i >= 0; i--) {
+		row = board[i]
+		for (var j = row.length - 1; j >= 0; j--) {
+			while (colors.indexOf(row[j].color) != 0)
+			{
+				row[j].flip()
+			}
+
+		}
+	}
 	n = parseInt(document.getElementById("dificulty").value)
-	console.log(n)
 	n = n+level
-	console.log(level)
 	for (var i = n - 1; i >= 0; i--) {
 	I = Math.floor(Math.random()*6)
 	J = Math.floor(Math.random()*6)
 	move(I,J,"",true)
+	document.getElementById('Start').innerHTML = "reset level "+n
 };
 }
 
+document.getElementById('Start').onclick = function(){
+
+		init_sound()
+backgroundTrack = new Audio("Ambient.mp3");
+backgroundTrack.volume = .1;
+backgroundTrack.loop = true;
+backgroundTrack.currentTime = Math.random()*100;
+generate_puzzle();
 document.getElementById('Start').onclick = generate_puzzle
+
+}
+
 
 $('#Start').on('click', function() {
     var body = $("html, body");

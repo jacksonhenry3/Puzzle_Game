@@ -1,5 +1,7 @@
 function move(i,j,dir,inv = false) {
 
+	
+
 	if (i==6||i==-1) {return};
 	if (j==6||j==-1) {return};
 	
@@ -16,6 +18,7 @@ function move(i,j,dir,inv = false) {
 		setTimeout(function(){move(i,j+1,"up",inv)},100*Math.random()+115)
 		setTimeout(function(){move(i,j-1,"down",inv)},100*Math.random()+115)
 	};
+	check_win()
 
 
 }
@@ -52,7 +55,10 @@ function check_win()
 		}
 		request.send();
 		level = level+1
+		// alert("Welcome to level "+level)
+		window.setTimeout(generate_puzzle,250)
 	}
+	// 
 
 
 }
