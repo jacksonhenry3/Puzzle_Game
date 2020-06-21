@@ -1,4 +1,4 @@
-function move(i,j,dir,inv = false) {
+function domove(i,j,dir,inv = false) {
 
 	
 
@@ -62,3 +62,5 @@ function check_win()
 
 
 }
+
+var move = domove

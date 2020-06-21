@@ -4,10 +4,12 @@ var instructions_button = document.getElementById('Instructions')
 var instructions = document.getElementById('instructions')
 var settings_shown = false
 var instructions_shown = false
+var backgroundTrack;
 var level = 1.;
+nothing = function(a,b,c){}
 function toggle_settings() {
-	if (settings_shown) {settings.style.transform = "scaleY(0) translate(-50%, -50%)";}
-	if (!settings_shown) {settings.style.transform = "scaleY(1) translate(-50%, -50%)";}
+	if (settings_shown) {settings.style.transform = "scaleY(0) translate(-50%, -50%)";move = domove}
+	if (!settings_shown) {settings.style.transform = "scaleY(1) translate(-50%, -50%)"; move = nothing}
 	settings_shown = ! settings_shown
 		
 		// self.element.style.boxShadow = ((-1)**self.Hflip_counter*.3)+"vmin "+((-1)**self.Vflip_counter*.3)+"vmin 0px 0px";
@@ -15,8 +17,8 @@ function toggle_settings() {
 }
 
 function toggle_instructions() {
-	if (instructions_shown) {instructions.style.transform = "scaleY(0) translate(-50%, -50%)";}
-	if (!instructions_shown) {instructions.style.transform = "scaleY(1) translate(-50%, -50%)";}
+	if (instructions_shown) {instructions.style.transform = "scaleY(0) translate(-50%, -50%)";move = domove}
+	if (!instructions_shown) {instructions.style.transform = "scaleY(1) translate(-50%, -50%)"; move = nothing}
 	instructions_shown = ! instructions_shown
 		
 		// self.element.style.boxShadow = ((-1)**self.Hflip_counter*.3)+"vmin "+((-1)**self.Vflip_counter*.3)+"vmin 0px 0px";
@@ -30,7 +32,7 @@ window.onclick = function(){
 
 	init_sound()
 backgroundTrack = new Audio("Ambient.mp3");
-backgroundTrack.volume = parseFloat(document.getElementById("click_volume").value);
+backgroundTrack.volume = .25*parseFloat(document.getElementById("click_volume").value);
 backgroundTrack.loop = true;
 backgroundTrack.currentTime = Math.random()*100;
 backgroundTrack.play();
@@ -50,6 +52,7 @@ backgroundTrack.play();
 
 };
 
+
 function generate_puzzle()
 {
 	for (var i = board.length - 1; i >= 0; i--) {
@@ -62,14 +65,21 @@ function generate_puzzle()
 
 		}
 	}
-	n = parseInt(document.getElementById("dificulty").value)-1
-	n = n+level
-	for (var i = n - 1; i >= 0; i--) {
+
+	if (level == 1)
+	{
+		level = parseInt(document.getElementById("dificulty").value)
+	}
+	console.log(level)
+	for (var i = level - 1; i >= 0; i--) {
 	I = Math.floor(Math.random()*6)
 	J = Math.floor(Math.random()*6)
 	move(I,J,"",true)
-	document.getElementById('Start').innerHTML = "reset level "+n
+	document.getElementById('Start').innerHTML = "fresh level "+level
 };
+}
+document.getElementById("click_volume").onclick = function(){
+backgroundTrack.volume = .25*parseFloat(document.getElementById("click_volume").value);
 }
 
 document.getElementById('Start').onclick = function(){
@@ -99,7 +109,7 @@ window.addEventListener('click', function(e){
   }
    else{
 
-    if (settings_shown) {settings.style.transform = "scaleY(0) translate(-50%, -50%)";settings_shown = ! settings_shown;}
+    if (settings_shown) {settings.style.transform = "scaleY(0) translate(-50%, -50%)";settings_shown = ! settings_shown;move = domove}
 	// if (!settings_shown) {settings.style.transform = "scaleY(1)";}
 	
   }
@@ -111,7 +121,7 @@ window.addEventListener('click', function(e){
   }
    else{
 
-    if (instructions_shown) {instructions.style.transform = "scaleY(0) translate(-50%, -50%)";instructions_shown = ! settings_shown;}
+    if (instructions_shown) {instructions.style.transform = "scaleY(0) translate(-50%, -50%)";instructions_shown = ! instructions_shown;move = domove}
 	// if (!settings_shown) {settings.style.transform = "scaleY(1)";}
 	
   }
