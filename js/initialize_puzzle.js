@@ -30,7 +30,7 @@ window.onclick = function(){
 
 	init_sound()
 backgroundTrack = new Audio("Ambient.mp3");
-backgroundTrack.volume = .1*parseFloat(document.getElementById("click_volume").value);
+backgroundTrack.volume = parseFloat(document.getElementById("click_volume").value);
 backgroundTrack.loop = true;
 backgroundTrack.currentTime = Math.random()*100;
 backgroundTrack.play();
