@@ -29,10 +29,10 @@ instructions_button.onclick = function(){toggle_instructions()}
 window.onclick = function(){
 
 	init_sound()
-// backgroundTrack = new Audio("Ambient.mp3");
-// backgroundTrack.volume = .1;
-// backgroundTrack.loop = true;
-// backgroundTrack.currentTime = Math.random()*100;
+backgroundTrack = new Audio("Ambient.mp3");
+backgroundTrack.volume = .1;
+backgroundTrack.loop = true;
+backgroundTrack.currentTime = Math.random()*100;
 
 
 
@@ -75,10 +75,10 @@ function generate_puzzle()
 document.getElementById('Start').onclick = function(){
 
 		init_sound()
-backgroundTrack = new Audio("Ambient.mp3");
-backgroundTrack.volume = .1;
-backgroundTrack.loop = true;
-backgroundTrack.currentTime = Math.random()*100;
+// backgroundTrack = new Audio("Ambient.mp3");
+// backgroundTrack.volume = .1;
+// backgroundTrack.loop = true;
+// backgroundTrack.currentTime = Math.random()*100;
 generate_puzzle();
 document.getElementById('Start').onclick = generate_puzzle
 
