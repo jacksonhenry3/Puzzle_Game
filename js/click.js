@@ -38,7 +38,7 @@ onError = function()
 function play_sound(buffer) {
   var source = context.createBufferSource(); // creates a sound source
   source.buffer = buffer;
-  click_volume = parseInt(document.getElementById("click_volume").value)
+  click_volume = parseFloat(document.getElementById("click_volume").value)
   gainNode.gain.setValueAtTime(click_volume, context.currentTime);                    // tell the source which sound to play
   source.connect(gainNode);       // connect the source to the context's destination (the speakers)
   source.start(0);                           // play the source now
