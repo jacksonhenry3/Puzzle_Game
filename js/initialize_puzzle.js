@@ -32,9 +32,10 @@ instructions_button.onclick = function(){toggle_instructions()}
 window.onclick = function(){
 	if (!sound_start) {
 	init_sound()
+	sound_start = true
 	}
 backgroundTrack = new Audio("Ambient.mp3");
-backgroundTrack.volume = .25*parseFloat(document.getElementById("click_volume").value);
+backgroundTrack.volume = .4*parseFloat(document.getElementById("click_volume").value);
 backgroundTrack.loop = true;
 backgroundTrack.currentTime = Math.random()*100;
 backgroundTrack.play();
@@ -81,12 +82,13 @@ function generate_puzzle()
 };
 }
 document.getElementById("click_volume").onclick = function(){
-backgroundTrack.volume = .25*parseFloat(document.getElementById("click_volume").value);
+backgroundTrack.volume = .4*parseFloat(document.getElementById("click_volume").value);
 }
 
 document.getElementById('Start').onclick = function(){
-
-		init_sound()
+		if (!sound_start) {init_sound()
+		sound_start = true}
+		
 // backgroundTrack = new Audio("Ambient.mp3");
 // backgroundTrack.volume = .1;
 // backgroundTrack.loop = true;
