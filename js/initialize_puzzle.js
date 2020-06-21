@@ -6,10 +6,11 @@ var settings_shown = false
 var instructions_shown = false
 var backgroundTrack;
 var level = 1.;
+var sound_start = false;
 nothing = function(a,b,c){}
 function toggle_settings() {
 	if (settings_shown) {settings.style.transform = "scaleY(0) translate(-50%, -50%)";move = domove}
-	if (!settings_shown) {settings.style.transform = "scaleY(1) translate(-50%, -50%)"; move = nothing}
+	if (!settings_shown) {settings.style.transform = "scaleY(1) translate(-50%, -50%)"; window.setTimeout(function(){move = nothing},500)}
 	settings_shown = ! settings_shown
 		
 		// self.element.style.boxShadow = ((-1)**self.Hflip_counter*.3)+"vmin "+((-1)**self.Vflip_counter*.3)+"vmin 0px 0px";
@@ -18,7 +19,7 @@ function toggle_settings() {
 
 function toggle_instructions() {
 	if (instructions_shown) {instructions.style.transform = "scaleY(0) translate(-50%, -50%)";move = domove}
-	if (!instructions_shown) {instructions.style.transform = "scaleY(1) translate(-50%, -50%)"; move = nothing}
+	if (!instructions_shown) {instructions.style.transform = "scaleY(1) translate(-50%, -50%)"; window.setTimeout(function(){move = nothing},500)}
 	instructions_shown = ! instructions_shown
 		
 		// self.element.style.boxShadow = ((-1)**self.Hflip_counter*.3)+"vmin "+((-1)**self.Vflip_counter*.3)+"vmin 0px 0px";
@@ -29,8 +30,9 @@ settings_button.onclick = function(){toggle_settings()}
 instructions_button.onclick = function(){toggle_instructions()}
 
 window.onclick = function(){
-
+	if (!sound_start) {
 	init_sound()
+	}
 backgroundTrack = new Audio("Ambient.mp3");
 backgroundTrack.volume = .25*parseFloat(document.getElementById("click_volume").value);
 backgroundTrack.loop = true;

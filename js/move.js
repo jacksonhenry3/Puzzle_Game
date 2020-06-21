@@ -1,4 +1,7 @@
 function domove(i,j,dir,inv = false) {
+	if (!sound_start) {
+	init_sound()
+	}
 
 	
 
