@@ -2,11 +2,13 @@
 
 var audio_list = ['click1.wav','click2.wav','click3.wav','click4.wav'];
 var click_buffers = [null,null,null,null]
-
+var gainNode;
 var context;
 function init_sound(argument) {
 	window.AudioContext = window.AudioContext || window.webkitAudioContext;
 context = new AudioContext();
+ gainNode = context.createGain();
+gainNode.connect(context.destination);
 
 for (var i = audio_list.length - 1; i >= 0; i--) {
 	load_sound(audio_list[i],i)
@@ -35,8 +37,10 @@ onError = function()
 }
 function play_sound(buffer) {
   var source = context.createBufferSource(); // creates a sound source
-  source.buffer = buffer;                    // tell the source which sound to play
-  source.connect(context.destination);       // connect the source to the context's destination (the speakers)
+  source.buffer = buffer;
+  click_volume = parseInt(document.getElementById("click_volume").value)
+  gainNode.gain.setValueAtTime(click_volume, audioCtx.currentTime);                    // tell the source which sound to play
+  source.connect(gainNode);       // connect the source to the context's destination (the speakers)
   source.start(0);                           // play the source now
                                              // note: on older systems, may have to use deprecated noteOn(time);
 }

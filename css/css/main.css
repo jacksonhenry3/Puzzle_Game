@@ -7,10 +7,9 @@ html {
 
 body {
   font-family: "M PLUS Rounded 1c", sans-serif;
-  font-weight: 200;
+  font-weight: 100;
   background: whitesmoke;
   -webkit-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
@@ -76,6 +75,7 @@ h1 {
   -webkit-appearance: none;
   width: 100%;
   height: 25px;
+  border-radius: 5px;
   background: #94b7e3;
   outline: none;
   opacity: 0.7;
@@ -84,6 +84,10 @@ h1 {
 
 .slider:hover {
   opacity: 1;
+}
+.slider:hover #bubble {
+  background: teal;
+  opacity: 0;
 }
 
 .slider::-webkit-slider-thumb {
@@ -159,9 +163,43 @@ h1 {
   color: #94b7e3;
   background: whitesmoke;
   /*opacity : 0;*/
-  transition: transform 0.25s;
+  transition: transform 0.1s;
   position: fixed;
   width: 90%;
+  max-width: 1080px;
+  left: 5%;
+  margin: 0px auto;
+  z-index: 100;
+  box-shadow: 0vmin 0vmin 0 100vmax rgba(0, 0, 0, 0.5);
+  top: 50%;
+  left: 50%;
+  transform: scaleY(0) translate(-50%, -50%);
+  border-radius: 2vmin;
+  border: 0.5vmin solid #94b7e3;
+  /*transform: */
+}
+
+.instructions-cont {
+  /*font-family: 'Roboto Slab', serif;*/
+  font-size: 1.5em;
+  position: relative;
+}
+.instructions-cont ol {
+  text-align: left;
+}
+
+#instructions {
+  padding-left: 5vmin;
+  padding-right: 5vmin;
+  padding-top: 2vmin;
+  padding-bottom: 2vmin;
+  color: #94b7e3;
+  background: whitesmoke;
+  /*opacity : 0;*/
+  transition: transform 0.1s;
+  position: fixed;
+  width: 90%;
+  max-width: 1080px;
   left: 5%;
   margin: 0px auto;
   z-index: 100;
@@ -185,9 +223,8 @@ h1 {
   padding-left: 35px;
   margin-bottom: 12px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 2em;
   -webkit-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   /*transition: all .25s;*/
   margin: 10px;
@@ -205,11 +242,16 @@ h1 {
 /* Create a custom checkbox */
 .checkmark {
   transition: all 0.25s;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
+  /*position: absolute;*/
+  display: inline-block;
+  /*  top: .25em;
+    right:.25em;*/
+  /*left: 25%;*/
+  height: 1em;
+  width: 1em;
+  margin: 0.25em;
+  margin-top: 1em;
+  margin-bottom: 0;
   background-color: white;
   border: 0.25vmin solid;
 }
@@ -245,4 +287,26 @@ h1 {
   border: solid white;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
+}
+
+#bubble {
+  display: inline-block;
+  background: #94b7e3;
+  color: white;
+  padding: 4px 12px;
+  margin: 3px;
+  /*position: absolute;*/
+  border-radius: 4px;
+  /*left: 50%;*/
+  /*height: 23px;*/
+  /*transform: translateX(-50%);/**/
+  /*transform: translateY(-23px);*/
+  /*height:0px;*/
+  /*opacity: .2;*/
+  transition: all 0.2s;
+}
+
+#dificulty:hover #bubble {
+  background: teal;
+  opacity: 1;
 }

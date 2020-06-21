@@ -1,8 +1,11 @@
 var settings_button = document.getElementById('Settings')
 var settings = document.getElementById('settings')
+var instructions_button = document.getElementById('Instructions')
+var instructions = document.getElementById('instructions')
 var settings_shown = false
+var instructions_shown = false
 var level = 1.;
-function togglee_settings() {
+function toggle_settings() {
 	if (settings_shown) {settings.style.transform = "scaleY(0) translate(-50%, -50%)";}
 	if (!settings_shown) {settings.style.transform = "scaleY(1) translate(-50%, -50%)";}
 	settings_shown = ! settings_shown
@@ -11,7 +14,17 @@ function togglee_settings() {
 
 }
 
-settings_button.onclick = function(){togglee_settings()}
+function toggle_instructions() {
+	if (instructions_shown) {instructions.style.transform = "scaleY(0) translate(-50%, -50%)";}
+	if (!instructions_shown) {instructions.style.transform = "scaleY(1) translate(-50%, -50%)";}
+	instructions_shown = ! instructions_shown
+		
+		// self.element.style.boxShadow = ((-1)**self.Hflip_counter*.3)+"vmin "+((-1)**self.Vflip_counter*.3)+"vmin 0px 0px";
+
+}
+
+settings_button.onclick = function(){toggle_settings()}
+instructions_button.onclick = function(){toggle_instructions()}
 
 window.onclick = function(){
 
@@ -90,4 +103,37 @@ window.addEventListener('click', function(e){
 	// if (!settings_shown) {settings.style.transform = "scaleY(1)";}
 	
   }
+  if (instructions_button.contains(e.target)){
+    // alert('contained')
+  }
+  else if (instructions.contains(e.target)){
+    // alert('contained')
+  }
+   else{
+
+    if (instructions_shown) {instructions.style.transform = "scaleY(0) translate(-50%, -50%)";instructions_shown = ! settings_shown;}
+	// if (!settings_shown) {settings.style.transform = "scaleY(1)";}
+	
+  }
 });
+
+var range = document.getElementById("dificulty");
+var bubble = document.getElementById("bubble");
+range.addEventListener("input", () => {
+  bubble.innerHTML = range.value;
+  setBubble(range, bubble)
+});
+
+function setBubble(range, bubble) {
+  const val = range.value;
+  const min = range.min ? range.min : 0;
+  const max = range.max ? range.max : 100;
+  const newVal = Number(((val - min) * 100) / (max - min));
+  console.log(range.offsetWidth)
+  console.log(newVal)
+  bubble.innerHTML = val;
+
+  // Sorta magic numbers based on size of the native UI thumb
+  // bubble.style.left = (range.offsetWidth*newVal/100.) +"px";
+   // bubble.style.left = `calc(${newVal}% + (${0}px))`;
+}

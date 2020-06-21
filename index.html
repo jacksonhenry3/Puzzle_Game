@@ -8,6 +8,7 @@
         <link rel="icon" 
       type="image/png" 
       href="icon.png">
+      <link rel="apple-touch-icon" href="icon.png">
         <title>Trying Tile</title>
 
         <!-- fonts -->
@@ -32,7 +33,7 @@
             <div class="row">
                 
                 <div class="col-sm-4" >
-                    <label class = "button" id = "Tutorial"> Instructions</label>
+                    <label class = "button" id = "Instructions"> Instructions</label>
                 </div>
                 <div class="col-sm-4" >
                     <label class = "button" id = "Start"> Start</label>
@@ -44,15 +45,31 @@
             <div class = "row settings-cont">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-10" id = "settings" class = "set">
-                    <h2>Difficulty</h2>
-                    <input type="range" min="0" max="12" value="0" step="1" class="slider" id="dificulty">
-                    <h2>sounds</h2>
-                    <input type="range" min="1" max="12" value="3" step="1" class="slider" id="click_volume">
-                    <h2>music</h2>
-                    <input type="range" min="1" max="12" value="3" step="1" class="slider" id="click_volume">
-                    <label class="container" onclick="redraw_all()">Show numbers
+                    <h2>Starting Level</h2>
+                    <input type="range" min="1" max="10" value="0" step="1" class="slider" id="dificulty">
+                    <output id="bubble">1</output>
+                    <h2>Volume</h2>
+                    <input type="range" min="0" max="1" value=".25" step=".001" class="slider" id="click_volume">
+                    <!-- h2>music</h2>
+                    <input type="range" min="1" max="12" value="3" step="1" class="slider" id="click_volume"> -->
+                    <label class="container check" onclick="redraw_all()">Show Numbers
                       <input type="checkbox" id = 'shownums'>
                       <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+            <div class = "row instructions-cont">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10" id = "instructions" class = "set">
+                    <ol> 
+                        <li>The goal is to make all tiles red.</li>
+                        <li>Click a tile to change each other tile in it's row and column to the next color in the rainbow.</li>
+                        <li> once you've done that the next level will begin automatically.</li>
+                         <li> Level one will require no more than one click, level two will reuire no more than two.</li>
+                    </ol> <hr>
+                        <h2>Good luck!<h2>
+                    
                     </label>
                 </div>
                 <div class="col-sm-1"></div>
