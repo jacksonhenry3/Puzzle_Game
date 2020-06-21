@@ -62,7 +62,7 @@ function generate_puzzle()
 
 		}
 	}
-	n = parseInt(document.getElementById("dificulty").value)
+	n = parseInt(document.getElementById("dificulty").value)-1
 	n = n+level
 	for (var i = n - 1; i >= 0; i--) {
 	I = Math.floor(Math.random()*6)
