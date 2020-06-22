@@ -35,7 +35,7 @@ window.onclick = function(){
 	sound_start = true
 	}
 backgroundTrack = new Audio("Ambient.mp3");
-backgroundTrack.volume = .4*parseFloat(document.getElementById("click_volume").value);
+backgroundTrack.volume = .2*parseFloat(document.getElementById("click_volume").value);
 backgroundTrack.loop = true;
 backgroundTrack.currentTime = Math.random()*100;
 backgroundTrack.play();
@@ -82,7 +82,7 @@ function generate_puzzle()
 };
 }
 document.getElementById("click_volume").onclick = function(){
-backgroundTrack.volume = .4*parseFloat(document.getElementById("click_volume").value);
+backgroundTrack.volume = .2*parseFloat(document.getElementById("click_volume").value);
 }
 
 document.getElementById('Start').onclick = function(){
